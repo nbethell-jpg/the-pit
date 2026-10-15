@@ -1,0 +1,58 @@
+---
+title: The Pit Design Doc
+format: html
+author: Niall Bethell
+css: ./assets/styles.css
+---
+# Introduction
+Taken captive you a thrown into the Pit for the amusement of the Boss and the Mob baying for blood.</br>
+The Boss offers you one chance at freedom. Fight you way through his thugs, beasts and monstrous menagerie and claim the title, Champion of the Pit.</br>
+Win and earn your freedom,</br>
+Lose and join the countless others beneath the dirt of... </br>
+**THE PIT!**
+
+```{mermaid}
+%%{init: {"theme": "redux-color", "themeVariables":{primaryTextColor": #151010}}}%%
+flowchart TD
+    classDef action fill: #ff000066, color: #000000
+    classDef startend fill: #3fcf3f, color: #000000
+    classDef comment fill: #ffff99, stroke-dasharray:5 5, color: #000000
+    classDef condition fill: #cb4bcb88, color: #000000
+    classDef data fill: #33ff00aa, color: #000000
+    A(Start)--->B
+    B[/Display introduction/]--->C[/Player selects starting class/]
+    B1(Determines starting stats and ability) -.- C
+    C--->D[/Players selects starting Weapon/]
+    D--->E[/Player selects starting Armour/]
+    E--->F['difficulty=0']
+    F--->G[Select Foe from list.difficulty]
+    G--->H[/player fights Foe/]
+    H--->J{Did player defeat Foe}
+    J-- No -->K(Game Over)
+    J-- Yes -->L[/Player levels up, select 1 attribute to increase/]
+    L--->M{Has player atribute increased to level that will unlock new ability}
+    M--yes-->N[/reward player new ability, tell them, and describe it/]
+    N--->P[/player recieves loot/]
+    M--No-->P
+    P--->Q[difficulty +=1]
+    Q--->U{is difficulty>5}
+    U--No-->G
+    U--Yes-->u{is difficulty >6}
+    u--No-->R[/player fights champion/]
+    R--->S{Did player defeat champion}
+    S--No-->K
+    S--Yes-->T[/player fights Pit Boss/]
+    T--->V{Did player defeat Pit Boss?}
+    V--no-->K
+    V--yes-->W[/Congratulations, you have escaped the pit!/]
+    
+
+    class V,u,M,J,U,S condition
+    class B1 comment
+    class K,A startend
+    class T,W,R,N,P,H,B,C,D,E,L action
+    class F,G data
+    
+```
+
+
