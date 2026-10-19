@@ -1,0 +1,9 @@
+fg  
+fighter  
+125 
+50 
+25 
+15 
+10 
+5 
+Administrators Office 

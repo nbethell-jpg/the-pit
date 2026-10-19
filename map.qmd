@@ -1,0 +1,36 @@
+---
+format: html
+---
+```{mermaid}
+flowchart TD
+    a[Front Gate]
+    b[Entrance Hall]
+    c[Reception]
+    d[Patient Ward]
+    e[Archives]
+    f[Administrator office]
+    g[Cells]
+    h[Chapel]
+    a---b
+    b---c
+    c---f
+    c---e
+    b---d
+    d---g
+    d---h
+    i[Basement Hallway]
+    j[Boiler room - coal fired]
+    k[Treatment Room]
+    l[Washroom/Hydro therapy]
+    m[Doctors Office]
+    d---i
+    i---l
+    i---k
+    l---j
+    k---m
+    n[Secret Treatment Room]
+    p[Altar]
+    k---n
+    n---p
+    
+```
