@@ -1,9 +1,9 @@
-fg  
-fighter  
-125 
+G 
+arcanist 
+75 
 50 
-25 
-15 
-10 
+75 
 5 
-Administrators Office 
+10 
+15 
+Archives 
